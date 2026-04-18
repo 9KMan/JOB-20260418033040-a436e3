@@ -1,0 +1,75 @@
+UPWORK BUILD — AI Instructional Planning Web App (7-Step Workflow)
+
+Job: Full-Stack Developer for AI Web App (Brilliant Teaching)
+Client: Upwork
+Budget: Open (hourly)
+URL: https://www.upwork.com/jobs/~022045142146747859482
+
+PROJECT: AI-supported instructional planning system. NOT a chatbot — structured thinking tool where users move through 7-step guided workflow, input thinking, system generates AI outputs based on those inputs, all outputs remain fully editable.
+
+MVP SCOPE:
+1. 7-step guided workflow (form-based, not chat-based)
+2. Clean, intuitive UI for step-by-step progression
+3. Backend to store structured data across all steps
+4. AI integration (OpenAI) for controlled, prompt-based generation
+5. Editable AI outputs at each stage
+6. Final synthesis page compiling all inputs
+7. User authentication (login, saved sessions)
+
+KEY CONSTRAINT: NOT a chatbot interface. AI tied directly to user inputs (structured generation). All outputs editable and persist across sessions.
+
+TECH STACK: React, Node.js/Express, OpenAI, PostgreSQL, AWS
+
+STEP-BY-STEP EXECUTION:
+
+1. Create GitHub repo:
+   curl -X POST -H "Authorization: token $GITHUB_TOKEN" -d '{"name":"JOB-20260418033040-a436e3","description":"AI Instructional Planning - 7-Step Workflow System","public":true}' https://api.github.com/user/repos
+   Replace $GITHUB_TOKEN with token from ~/.netrc
+
+2. Build complete MVP:
+   - Frontend: React with 7-step form workflow
+   - Backend: Node.js/Express with PostgreSQL
+   - AI: OpenAI integration with structured prompt chaining (later steps reference earlier inputs)
+   - Auth: JWT-based authentication + session management
+   - State: Multi-step form state persistence
+   - UI: Clean, modern, responsive design
+
+3. Write proposal documents:
+   - PROPOSAL.md → /home/deploy/.hermes/proposals/JOB-20260418033040-a436e3-proposal.md
+   - COVER_LETTER.txt → /home/deploy/.hermes/proposals/JOB-20260418033040-a436e3-cover-letter.txt
+
+4. PROPOSAL.md must answer screening questions thoughtfully:
+   
+   Q1: How would you build a multi-step workflow web app where each step collects user input, stores it, and uses it to generate AI outputs in later steps?
+   A: Design state management where each step saves to DB. Later AI prompts inject previous steps as context. Use session-based state that accumulates through workflow. Each step's AI call passes full context of all prior steps.
+   
+   Q2: How would you structure prompts so AI outputs are based on specific user inputs rather than generic responses?
+   A: Create template prompts with placeholders that inject actual user data. Example: "Based on the learner's goal of [step1_goal] and their target audience of [step2_audience], generate an activity that [step3_criteria]." This ensures outputs are directly tied to inputs, not generic.
+   
+   Q3: What tech stack would you recommend and why?
+   A: React (frontend, form state management), Node.js/Express (backend, API), PostgreSQL (structured data per step), Redis (session caching), OpenAI (structured generation), AWS (deployment). Rationale: React handles multi-step form complexity well, Node.js/Express is fast for API dev, PostgreSQL handles structured data across steps reliably.
+
+   Q4: Share an example of web app with forms, workflows, or AI integration.
+   A: Describe any multi-step form or workflow system you've built. If none, describe the architecture you'd use for this specific case.
+
+5. COVER_LETTER.txt must:
+   - Show React + Node.js full-stack experience
+   - Show OpenAI/structured generation experience
+   - Demonstrate understanding of "not a chatbot" approach
+   - Confirm availability for <30 hrs/week
+   - Show product thinking (not just code execution)
+
+6. Push code to GitHub
+
+7. VERIFY all exist:
+   - GitHub repo: https://github.com/9KMan/JOB-20260418033040-a436e3
+   - PROPOSAL.md in /home/deploy/.hermes/proposals/
+   - COVER_LETTER.txt in /home/deploy/.hermes/proposals/
+
+8. ONLY THEN advance to DRAFT:
+   python3 /home/deploy/.hermes/scripts/job-advance JOB-20260418033040-a436e3 DRAFT build
+
+Check in every 4 hours:
+   python3 /home/deploy/.hermes/scripts/job-checkin JOB-20260418033040-a436e3 <note>
+
+START NOW — execute all steps above.
